@@ -3,13 +3,14 @@ provider "aws" {
 }
 
 resource "aws_instance" "myec2" {
+    #add an ami available in AWS console
     ami = ""
     instance_type = "t2.micro"
 
     tags = {
         Name = "Web Server"
     }
-    depends_on = ["aws_instance.myec2db"]
+    depends_on = [aws_instance.myec2db]
 }
 
 resource "aws_instance" "myec2db" {
@@ -19,4 +20,15 @@ resource "aws_instance" "myec2db" {
     tags = {
         Name = "DB Server"
     }
+}
+
+data "aws_instance" "dbsearch" {
+  filter {
+      name = "tag:Name"
+      values = ["DB Server"]
+  }
+}
+
+output "dbserver" {
+  value = data.aws_instance.dbsearch.availability_zone
 }
