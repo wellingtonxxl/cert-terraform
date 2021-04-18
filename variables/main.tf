@@ -42,6 +42,20 @@ resource "aws_vpc" "myvpc" {
     }
 }
 
-output "myoutput" {
+output "vpcid" {
   value = aws_vpc.myvpc.id
+}
+
+#similar to list, but here you can specify the type of the variable
+variable "mytuple" {
+  type = tuple([string, number, string])
+  default = ["cat", 1, "dog"]
+}
+
+variable "myobject" {
+  type = object([{name = string, port = list(number)}])
+  default = {
+    name = "TJ"
+    port = [22, 25, 80]
+  }
 }
