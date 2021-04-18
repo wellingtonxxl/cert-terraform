@@ -13,7 +13,7 @@ variable "egress_rules" {
 }
 
 resource "aws_instance" "myec2ws" {
-    ami = ""   
+    ami = "ami-0ff8a91507f77f867"   
     instance_type = "t2.micro"
     security_groups = [ aws_security_group.web_traffic.name ]
     tags = {
