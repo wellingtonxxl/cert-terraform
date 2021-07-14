@@ -1,5 +1,5 @@
 variable "dbname" {
-    type = String
+    type = string
 }
 
 
