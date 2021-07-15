@@ -1,0 +1,4 @@
+- set variables of AWS with aws configure
+- not insert variables explicity in the files
+
+
