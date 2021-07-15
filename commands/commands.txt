@@ -1,0 +1,22 @@
+terraform fmt -> formatar/identar arquivos
+
+terraform taint ->
+
+terraform untaint ->
+
+terraform import -> trazer recursos que ja foram criados do provider
+terraform import "variable" "resource_id"
+
+terraform workspace select "workspace_name"
+terraform workspace delete "workspace_name"
+terraform workspace list
+terraform workspace show
+terraform workspace swap
+
+terraform state list
+terraform state pull
+terraform state mv
+terraform state rm
+terraform debbug -> export TF_LOG=TRACE (the most verbose logging you can create)
+
+
